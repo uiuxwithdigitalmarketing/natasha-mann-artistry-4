@@ -1,0 +1,321 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Natasha Mann Artistry — luxury editorial design system.
+ * Palette: warm ivory, soft white, champagne, muted rose gold, warm charcoal.
+ * All colours are oklch semantic tokens. Never hardcode colours in components.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --font-display: "Cormorant Garamond", "Times New Roman", serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-script: "Italianno", "Cormorant Garamond", cursive;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  --color-ink: var(--ink);
+  --color-ivory: var(--ivory);
+  --color-champagne: var(--champagne);
+  --color-rosegold: var(--rosegold);
+  --color-blush: var(--blush);
+  --color-charcoal: var(--charcoal);
+  --color-onink: var(--onink);
+  --color-onink-muted: var(--onink-muted);
+
+  --shadow-editorial: 0 30px 80px -50px oklch(0.14 0.005 60 / 0.35);
+  --ease-lux: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root {
+  --radius: 0.125rem;
+
+  /* Light edition — warm ivory editorial palette with rose-gold gilding. */
+  --ink: oklch(0.115 0.004 60);
+  --ivory: oklch(0.974 0.006 85);
+  --champagne: oklch(0.825 0.052 66);
+  --rosegold: oklch(0.755 0.078 42);
+  --blush: oklch(0.9 0.03 32);
+  --charcoal: oklch(0.24 0.006 60);
+  --onink: oklch(0.968 0.005 85);
+  --onink-muted: oklch(0.745 0.012 75);
+
+  --background: var(--ivory);
+  --foreground: var(--ink);
+  --card: oklch(0.992 0.004 85);
+  --card-foreground: var(--ink);
+  --popover: oklch(0.992 0.004 85);
+  --popover-foreground: var(--ink);
+  --primary: var(--rosegold);
+  --primary-foreground: oklch(0.13 0.005 45);
+  --secondary: oklch(0.955 0.012 75);
+  --secondary-foreground: var(--ink);
+  --muted: oklch(0.945 0.01 75);
+  --muted-foreground: oklch(0.43 0.012 65);
+  --accent: var(--rosegold);
+  --accent-foreground: oklch(0.13 0.005 45);
+  --destructive: oklch(0.6 0.19 25);
+  --destructive-foreground: var(--onink);
+  --border: oklch(0.86 0.018 70);
+  --input: oklch(0.82 0.018 70);
+  --ring: var(--rosegold);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 300;
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background: var(--color-champagne);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-rosegold);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+/* ---------- Brand utilities ---------- */
+
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--color-rosegold);
+}
+
+@utility script {
+  font-family: var(--font-script);
+  letter-spacing: 0.01em;
+  line-height: 1;
+}
+
+@utility rule-champagne {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-champagne),
+    transparent
+  );
+}
+
+@utility link-underline {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 1px;
+    width: 100%;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s var(--ease-lux);
+  }
+  &:hover::after,
+  &[data-status="active"]::after {
+    transform: scaleX(1);
+  }
+}
+
+@utility btn-lux {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 2.75rem;
+  padding: 0.9rem 1.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background: linear-gradient(
+    100deg,
+    var(--color-rosegold),
+    var(--color-champagne) 55%,
+    var(--color-rosegold)
+  );
+  color: var(--color-ink);
+  border: 1px solid var(--color-rosegold);
+  transition:
+    filter 0.45s var(--ease-lux),
+    background 0.45s var(--ease-lux),
+    color 0.45s var(--ease-lux),
+    border-color 0.45s var(--ease-lux);
+  &:hover {
+    filter: brightness(1.08);
+  }
+}
+
+/* Rose-gold hairline card, echoing the brand's gilded service panels. */
+@utility gilt-card {
+  position: relative;
+  border: 1px solid color-mix(in oklab, var(--color-rosegold) 38%, transparent);
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--color-rosegold) 6%, transparent),
+    transparent 60%
+  );
+  transition:
+    border-color 0.5s var(--ease-lux),
+    background 0.5s var(--ease-lux);
+  &:hover {
+    border-color: color-mix(in oklab, var(--color-rosegold) 75%, transparent);
+    background: linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--color-rosegold) 12%, transparent),
+      transparent 70%
+    );
+  }
+}
+
+@utility gilt-rule {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    color-mix(in oklab, var(--color-rosegold) 70%, transparent),
+    transparent
+  );
+}
+
+@utility btn-outline-lux {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 2.75rem;
+  padding: 0.9rem 1.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background: transparent;
+  color: currentColor;
+  border: 1px solid color-mix(in oklab, currentColor 45%, transparent);
+  transition:
+    background 0.45s var(--ease-lux),
+    border-color 0.45s var(--ease-lux);
+  &:hover {
+    border-color: var(--color-champagne);
+    background: color-mix(in oklab, var(--color-champagne) 16%, transparent);
+  }
+}
+
+@utility zoom-slow {
+  overflow: hidden;
+  & img {
+    transition: transform 1.2s var(--ease-lux);
+    will-change: transform;
+  }
+  &:hover img {
+    transform: scale(1.05);
+  }
+}
+
+@utility grain {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+@utility reveal-init {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+@utility reveal-in {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 1s var(--ease-lux),
+    transform 1s var(--ease-lux);
+}
+.hero-accent-text {
+  color: oklch(0.77 0.07 45);
+}
+
+.hero-accent-border {
+  border-color: oklch(0.77 0.07 45 / 55%);
+}
