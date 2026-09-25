@@ -97,6 +97,22 @@ export function BookingForm({
             className={fieldClass}
           />
         </div>
+              <div>
+  <label className={labelClass} htmlFor="booking-appointment-type">
+    Appointment type
+  </label>
+  <select
+    id="booking-appointment-type"
+    name="appointmentType"
+    className={fieldClass}
+    defaultValue="Book an Appointment"
+  >
+    <option value="Book an Appointment">Book an Appointment</option>
+    <option value="Mobile Services in Studio">
+      Mobile Services in Studio
+    </option>
+  </select>
+</div>
         <div>
           <label className={labelClass} htmlFor="booking-service">
             Service
@@ -117,13 +133,7 @@ export function BookingForm({
             <option value="Not sure yet">Not sure yet</option>
           </select>
         </div>
-        <div>
-          <label className={labelClass} htmlFor="booking-date">
-            Preferred date
-          </label>
-          <input id="booking-date" name="date" type="date" className={fieldClass} />
-        </div>
-        <div>
+              <div>
           <label className={labelClass} htmlFor="booking-event">
             Event type
           </label>
@@ -135,6 +145,14 @@ export function BookingForm({
             ))}
           </select>
         </div>
+        <div>
+          <label className={labelClass} htmlFor="booking-date">
+            Preferred date
+          </label>
+          <input id="booking-date" name="date" type="date" className={fieldClass} />
+        </div>
+  
+  
         <div className="sm:col-span-2">
           <label className={labelClass} htmlFor="booking-location">
             Location

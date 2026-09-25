@@ -172,36 +172,53 @@ My specialty is Glam & Soft Glam Makeup, with a focus on beautiful, long-lasting
             title="Makeup &amp; hairstyling in Brampton, designed as one experience."
             lead="Bridal and special occasion artistry — book makeup and hair together, or either on its own."
           />
-          <ul className="mt-14 flex flex-col gap-4">
-            {services.map((s, i) => (
-              <Reveal as="li" key={s.slug} delay={i * 70}>
-                <Link
-                  to="/services/$slug"
-                  params={{ slug: s.slug }}
-                  className="gilt-card group grid grid-cols-1 items-center gap-6 p-6 sm:grid-cols-[4rem_1fr_auto] sm:gap-8 sm:p-8"
-                >
-                  <span className="font-display text-3xl text-rosegold sm:text-4xl">
-                    {s.index}
-                  </span>
-                  <span className="block">
-                    <h3 className="font-display text-2xl sm:text-3xl">
-                      {s.title}
-                    </h3>
-                    <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-                      {s.lead}
-                    </p>
-                  </span>
-                  <span className="inline-flex items-center gap-2 text-[0.64rem] font-semibold tracking-[0.22em] text-rosegold uppercase">
-                    View service
-                    <ArrowRight
-                      className="size-3.5 transition-transform duration-500 group-hover:translate-x-1"
-                      aria-hidden="true"
-                    />
-                  </span>
-                </Link>
-              </Reveal>
-            ))}
-          </ul>
+          <ul className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
+  {services.map((s, i) => (
+    <Reveal as="li" key={s.slug} delay={i * 70} className="h-full">
+      <Link
+        to="/services/$slug"
+        params={{ slug: s.slug }}
+        className="group flex h-full flex-col overflow-hidden border border-border bg-card transition-colors duration-500 hover:border-rosegold/50"
+      >
+        {/* Service image */}
+        <div className="overflow-hidden">
+          <img
+            src={images[s.image]}
+            alt={s.alt}
+            width={1200}
+            height={750}
+            loading="lazy"
+            decoding="async"
+            className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+          />
+        </div>
+
+        {/* Service content */}
+        <div className="flex flex-1 flex-col p-7 sm:p-8">
+          <span className="font-display text-3xl text-rosegold/40 sm:text-4xl">
+            {s.index}
+          </span>
+
+          <h3 className="mt-6 font-display text-2xl leading-tight sm:text-3xl">
+            {s.title}
+          </h3>
+
+          <p className="mt-4 text-sm leading-7 text-muted-foreground">
+            {s.lead}
+          </p>
+
+          <span className="mt-auto flex items-center gap-2 pt-8 text-[0.64rem] font-semibold tracking-[0.22em] text-rosegold uppercase">
+            View service
+            <ArrowRight
+              className="size-3.5 transition-transform duration-500 group-hover:translate-x-1"
+              aria-hidden="true"
+            />
+          </span>
+        </div>
+      </Link>
+    </Reveal>
+  ))}
+</ul>
           <Reveal className="mt-12">
             <Link to="/services" className="btn-outline-lux text-foreground">
               See all services
