@@ -10,7 +10,6 @@ import { Reveal } from "@/components/site/Reveal";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { SocialGallery } from "@/components/site/SocialGallery";
 import { Testimonials } from "@/components/site/Testimonials";
-import { TrustStrip } from "@/components/site/TrustStrip";
 import { images } from "@/content/images";
 import { business, faqs, pillars, services } from "@/content/site";
 
