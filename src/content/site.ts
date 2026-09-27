@@ -255,12 +255,6 @@ export const experience = [
   },
 ] as const;
 
-export const trustSignals = [
-  "Professional Makeup Artistry",
-  "Makeup & Hairstyling Together",
-  "Bridal & Special Occasion",
-  "Brampton West, Ontario",
-] as const;
 
 /**
  * Testimonials. `isPlaceholder: true` entries are clearly marked in the UI and
