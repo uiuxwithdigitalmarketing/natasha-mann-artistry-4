@@ -58,39 +58,27 @@ function Hero() {
       />
 
       <div className="relative mx-auto flex min-h-[94svh] max-w-4xl flex-col items-center justify-center px-5 py-32 text-center sm:px-8">
-      
-        <Reveal delay={420}>
-          <h1 className="mt-10 font-display text-[2.6rem] leading-[1.02] text-foreground sm:text-6xl lg:text-7xl text-white">
-            Bridal &amp; Occasion Makeup Artist
-            <span className="mt-2 block text-rosegold italic">
-              in Brampton West, Ontario
-            </span>
-          </h1>
+        <Reveal delay={160}>
+          <LogoMark className="mx-auto w-[15rem] sm:w-[19rem]" />
         </Reveal>
-        <Reveal delay={640}>
-          <p className="mx-auto mt-8 text-sm leading-relaxed text-foreground-muted sm:text-base text-white">
-            Professional makeup artistry and hairstyling by Natasha Mann —
-            personalised for your features, your outfit and your occasion, and
-            available across Brampton and the surrounding GTA.
-          </p>
-        </Reveal>
+    
+        <div className="mt-8 text-center">
+  <p className="font-script text-2xl leading-relaxed text-foreground sm:text-3xl text-white">
+    Bridal | Pre bridal | Full Glam
+    <br />
+    Soft Glam | Photoshoots
+  </p>
+</div>
         <Reveal delay={820}>
           <div className="mt-11 flex flex-wrap justify-center gap-4">
             <Link to="/contact" className="btn-lux">
               Book an Appointment
               <ArrowRight className="size-3.5" aria-hidden="true" />
             </Link>
-            <a href={business.phoneHref} className="btn-outline-lux hero-accent-text">
-              Mobile Services In studio
-            </a>
+      
           </div>
         </Reveal>
-        <Reveal delay={1000}>
-          <p className="mt-14 flex items-center justify-center gap-3 text-[0.62rem] tracking-[0.26em] text-foreground-muted uppercase text-white">
-            <ArrowDown className="size-3.5 animate-bounce" aria-hidden="true" />
-            Mobile service · Serving Brampton &amp; surrounding areas
-          </p>
-        </Reveal>
+
       </div>
     </section>
   );

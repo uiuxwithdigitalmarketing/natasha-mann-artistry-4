@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import { business, services } from "@/content/site";
 
 const eventTypes = [
@@ -24,6 +23,7 @@ export function BookingForm({
   defaultService?: string;
 } = {}) {
   const [sent, setSent] = useState(false);
+  const [appointmentType, setAppointmentType] = useState("Book an Appointment");
   const selectedService =
     defaultService && services.some((s) => s.title === defaultService)
       ? defaultService
@@ -97,22 +97,52 @@ export function BookingForm({
             className={fieldClass}
           />
         </div>
-              <div>
+<div>
   <label className={labelClass} htmlFor="booking-appointment-type">
     Appointment type
   </label>
+
   <select
     id="booking-appointment-type"
     name="appointmentType"
     className={fieldClass}
-    defaultValue="Book an Appointment"
+    value={appointmentType}
+    onChange={(e) => setAppointmentType(e.target.value)}
   >
     <option value="Book an Appointment">Book an Appointment</option>
-    <option value="Mobile Services in Studio">
-      Mobile Services in Studio
-    </option>
+    <option value="Mobile Services">Mobile Services</option>
   </select>
 </div>
+
+{appointmentType === "Mobile Services" && (
+  <div className="sm:col-span-2">
+    <p className={labelClass}>Mobile Service Location:</p>
+
+    <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:gap-8">
+      <label className="flex cursor-pointer items-center gap-3 text-sm text-foreground">
+        <input
+          type="radio"
+          name="mobileServiceLocation"
+          value="Toronto / GTA"
+          required
+          className="h-4 w-4 accent-current"
+        />
+        <span>Toronto / GTA</span>
+      </label>
+
+      <label className="flex cursor-pointer items-center gap-3 text-sm text-foreground">
+        <input
+          type="radio"
+          name="mobileServiceLocation"
+          value="Outside Toronto / GTA"
+          required
+          className="h-4 w-4 accent-current"
+        />
+        <span>Outside Toronto / GTA</span>
+      </label>
+    </div>
+  </div>
+)}
         <div>
           <label className={labelClass} htmlFor="booking-service">
             Service

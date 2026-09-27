@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 
-import logo from "@/assets/nm-logo-white.png";
+import logo from "@/assets/nm-logo.png";
 import { business } from "@/content/site";
 import { cn } from "@/lib/utils";
 
