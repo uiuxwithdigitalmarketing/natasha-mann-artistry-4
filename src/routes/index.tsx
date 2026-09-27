@@ -123,7 +123,6 @@ function Home() {
   return (
     <>
       <Hero />
-      <TrustStrip />
       <Pillars />
 
       {/* About */}
