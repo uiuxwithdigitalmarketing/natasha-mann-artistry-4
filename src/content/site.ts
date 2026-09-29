@@ -69,7 +69,7 @@ export const services: Array<{
   intro: string;
   expect: string[];
   occasions: string;
-  image: "bridalHair" | "bridalMakeup" | "partyMakeup" | "partyHair";
+  image: "bridalMakeup" | "softGlam" | "FullGlamMakeup" | "photoshootmakeup" | "PreBridalMakeup";
   alt: string;
 }> = [
   {
@@ -88,7 +88,7 @@ export const services: Array<{
       "Finishing touches before you step out",
     ],
     occasions: "Weddings, receptions, engagements and multi-day celebrations.",
-    image: "bridalHair",
+    image: "bridalMakeup",
     alt: "Bridal makeup and hairstyling in Brampton finished with a soft twisted low bun and pearl pins",
   },
   {
@@ -107,7 +107,7 @@ export const services: Array<{
       "A quiet, unhurried getting-ready experience",
     ],
     occasions: "Wedding days, civil ceremonies, engagements and bridal shoots.",
-    image: "bridalMakeup",
+    image: "PreBridalMakeup",
     alt: "Bridal makeup artist in Brampton blending soft glam eyeshadow on a bride",
   },
   {
@@ -127,7 +127,7 @@ export const services: Array<{
     ],
     occasions:
       "Receptions, engagements, birthdays, graduations and festive events.",
-    image: "partyHair",
+    image: "FullGlamMakeup",
     alt: "Party makeup and hairstyling in Brampton with an evening updo and bronzed makeup",
   },
   {
@@ -146,31 +146,12 @@ export const services: Array<{
       "Optional accessory placement",
     ],
     occasions: "Receptions, family functions, formals and evening events.",
-    image: "partyHair",
+    image: "softGlam",
     alt: "Party hairstyling in Brampton with voluminous soft curls and a half updo",
   },
+  
   {
     index: "05",
-    slug: "regular-party-makeup",
-    title: "Regular Party Makeup",
-    navTitle: "Regular Party Makeup",
-    lead: "Flawless makeup for your next occasion.",
-    intro:
-      "Heading to a party, an event or hosting one yourself? A flawless, beautiful makeup look from a reliable professional with years of industry experience — soft glam, bronzed neutrals or something bolder, styled to your outfit and the evening ahead.",
-    expect: [
-      "A short consultation on outfit, mood and finish",
-      "Luminous or matte base, your preference",
-      "Eye design from soft glam to defined smoke",
-      "Optional lashes",
-      "Touch-up guidance for the night",
-    ],
-    occasions:
-      "Receptions, engagements, birthdays, graduations, festive events and photoshoots.",
-    image: "partyMakeup",
-    alt: "Party makeup in Brampton featuring a bronzed smoky eye and glossy lip",
-  },
-  {
-    index: "06",
     slug: "traditional-makeup",
     title: "Traditional Makeup",
     navTitle: "Traditional Makeup",
@@ -186,11 +167,11 @@ export const services: Array<{
     ],
     occasions:
       "Receptions, engagements, birthdays, graduations, festive events and photoshoots.",
-    image: "partyMakeup",
+    image: "traditionalmakeup",
     alt: "Party makeup in Brampton featuring a bronzed smoky eye and glossy lip",
   },
   {
-    index: "07",
+    index: "06",
     slug: "photoshoot-makeup",
     title: "Photoshoot Makeup",
     navTitle: "Photoshoot Makeup",
@@ -206,7 +187,7 @@ export const services: Array<{
     ],
     occasions:
       "Receptions, engagements, birthdays, graduations, festive events and photoshoots.",
-    image: "partyMakeup",
+    image: "photoshootmakeup",
     alt: "Party makeup in Brampton featuring a bronzed smoky eye and glossy lip",
   },
 ];
